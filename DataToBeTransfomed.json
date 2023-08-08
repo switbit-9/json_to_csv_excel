@@ -1,0 +1,3123 @@
+[
+  {
+    "ParameterInformation": [
+      {
+        "ParameterName": "Wirkleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_WATTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "da6a3bbc-a600-40fa-970a-08fb75f19111",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "E_Spannung",
+        "ParameterValues": {
+          "Allgemein": "230"
+        },
+        "Unit": "BSU_VOLTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPotential",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "921a7dc4-d764-4b67-90cb-46dc008d6f93",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Phasen_Anzahl",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "NumberOfPoles",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "if(E_Spannung > 300 V, 3, 1)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "1d908d49-e7cd-4e98-a72a-1ec6a7d3594e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Scheinleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_VOLT_AMPERES",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalApparentPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "Wirkleistung / Leistungsfaktor",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "6f874434-de90-4722-8bdd-73bcf20a8117",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Leistungsfaktor",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_GENERAL",
+        "ParameterType": "Double",
+        "ParameterValueType": "Number",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ed7f8dce-5294-4d47-963b-315e4c22657d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Lastklassifizierung",
+        "ParameterValues": {
+          "Allgemein": "Sonstige"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "LoadClassification",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ccf46e60-73fb-4568-93c7-f48a011bc16e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "A",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"A\", if(DN < 100 mm, DN + 170 mm, if(DN > 200 mm, DN + 330 mm, DN + 300 mm)), DN)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DN",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"DN\", Durchmesser, Durchmesser)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Breite",
+        "ParameterValues": {
+          "Allgemein": "429.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "if(D0 + C < 240 mm, 240 mm, D0 + C)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typ Vordefinierter IFC-Typ",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_PREDEFINEDTYPE_TYPE"
+      },
+      {
+        "ParameterName": "Typ in IFC exportieren als",
+        "ParameterValues": {
+          "Allgemein": "IfcValveType"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_ELEMENT_TYPE_AS"
+      },
+      {
+        "ParameterName": "Vorgabe-Ansicht",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_CONSTRAINTS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "FAMILY_FREEINST_DEFAULT_ELEVATION"
+      },
+      {
+        "ParameterName": "R_Druckverlust",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_PASCALS",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingPressure",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c2e2a153-9669-4f71-85e2-42efd3a7317d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "R_Volumenstrom",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CUBIC_METERS_PER_HOUR",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingFlow",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "3c8f6eba-efaf-42a0-b743-d891c44dc090",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Gehäuse_Oberfläche",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Material",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MATERIALS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Breite_Benutzer = 0 mm, Durchmesser * 1,5, Breite_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "f1380248-b21a-4a7f-8b48-5e996701644b",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Durchmesser",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "dd7e134f-e7cb-4e92-bc8e-0c3aefa01f23",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Höhe_Benutzer = 0 mm, Breite, Höhe_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "a7738561-8450-4ba3-8df1-1d4113d4faf6",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Länge_Benutzer = 0 mm, A, Länge_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c44ce259-a60f-4d96-b00f-94242e29a5f2",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Oben_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "F0",
+        "ParameterValues": {
+          "Allgemein": "302.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Oben_Benutzer = 0 mm, size_lookup(Abruftabelle, \"F\", if(DN < 100 mm, 0,029 m² / DN, if(DN > 150 mm, 0,037 m² / DN, 0,033 m² / DN)), DN), Alarmleitung_Abstand_Oben_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "C",
+        "ParameterValues": {
+          "Allgemein": "220"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"C\", if(DN < 100 mm, DN + 140 mm, if(DN > 200 mm, DN + 80 mm, DN + 110 mm)), DN), Alarmleitung_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Manometer_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "D0",
+        "ParameterValues": {
+          "Allgemein": "209.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Manometer_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"D\", C - 10 mm, DN), Manometer_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anschlussstutzen_Länge",
+        "ParameterValues": {
+          "Allgemein": "10"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abkürzung",
+        "ParameterValues": {
+          "Allgemein": "NAV"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fd8abad9-396c-4641-9b11-e4144bd26ce1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "BIMPedia",
+        "ParameterValues": {
+          "Allgemein": "https://www.bimpedia.eu/artikel/1852-familienkatalog-tga"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DIN_276",
+        "ParameterValues": {
+          "Allgemein": "475 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"475 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "0c0dc952-fee9-445a-8bb1-2a1812250cc3",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_Copyright",
+        "ParameterValues": {
+          "Allgemein": "Copyright©by Anonymous GmbH"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Copyright©by Anonymous GmbH\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_URL",
+        "ParameterValues": {
+          "Allgemein": "https://Anonymous.eu/bim-templates/"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anonymous_Gruppe",
+        "ParameterValues": {
+          "Allgemein": "Alarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Alarmventilstation\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "8a7b2751-6676-4816-b7b0-cd07abbb7813",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNCODE",
+        "ParameterValues": {
+          "Allgemein": "05;22;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"05;22;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ae016126-4564-406b-a9d7-e31026663448",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNSEQ",
+        "ParameterValues": {
+          "Allgemein": "\"AWI,AWI_TYP=\"\"1015\"\";\"2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"\\\"AWI,AWI_TYP=\\\"\\\"1015\\\"\\\";\\\"2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c6920c4c-40de-47b3-9607-4de217e8c28d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCTWCODE",
+        "ParameterValues": {
+          "Allgemein": "04;21;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"04;21;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "4f4dd23a-1543-4685-8f1a-8b0fcf197cd4",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typenbild",
+        "ParameterValues": {
+          "Allgemein": "-1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Image",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_IMAGE"
+      },
+      {
+        "ParameterName": "Bauelement",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "KEYNOTE_PARAM"
+      },
+      {
+        "ParameterName": "Modell",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MODEL"
+      },
+      {
+        "ParameterName": "Hersteller",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MANUFACTURER"
+      },
+      {
+        "ParameterName": "Typenkommentare",
+        "ParameterValues": {
+          "Allgemein": "Nassalarmventilstation;;Typ 1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_COMMENTS"
+      },
+      {
+        "ParameterName": "URL",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_URL"
+      },
+      {
+        "ParameterName": "Beschreibung",
+        "ParameterValues": {
+          "Allgemein": "Nassalarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_DESCRIPTION"
+      },
+      {
+        "ParameterName": "Baugruppenkennzeichen",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "UNIFORMAT_CODE"
+      },
+      {
+        "ParameterName": "Kosten",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CURRENCY",
+        "ParameterType": "Double",
+        "ParameterValueType": "Currency",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "DOOR_COST"
+      },
+      {
+        "ParameterName": "ÖN_1801",
+        "ParameterValues": {
+          "Allgemein": "3E.04 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"3E.04 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fe9e83eb-e164-445c-a19d-e7dcd11a52b1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abruftabelle",
+        "ParameterValues": {
+          "Allgemein": "Nassalarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Normal",
+        "ParameterValues": {
+          "Allgemein": "true"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Gespiegelt",
+        "ParameterValues": {
+          "Allgemein": "false"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": "not(Symbol_Darstellung_Normal)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      }
+    ],
+    "ErrorInformation": [],
+    "FamilyLoaded": true,
+    "FileName": "Family1.rfa"
+  },
+  {
+    "ParameterInformation": [
+      {
+        "ParameterName": "Wirkleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_WATTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "da6a3bbc-a600-40fa-970a-08fb75f19111",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "E_Spannung",
+        "ParameterValues": {
+          "Allgemein": "230"
+        },
+        "Unit": "BSU_VOLTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPotential",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "921a7dc4-d764-4b67-90cb-46dc008d6f93",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Phasen_Anzahl",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "NumberOfPoles",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "if(E_Spannung > 300 V, 3, 1)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "1d908d49-e7cd-4e98-a72a-1ec6a7d3594e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Scheinleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_VOLT_AMPERES",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalApparentPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "Wirkleistung / Leistungsfaktor",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "6f874434-de90-4722-8bdd-73bcf20a8117",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Leistungsfaktor",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_GENERAL",
+        "ParameterType": "Double",
+        "ParameterValueType": "Number",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ed7f8dce-5294-4d47-963b-315e4c22657d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Lastklassifizierung",
+        "ParameterValues": {
+          "Allgemein": "Sonstige"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "LoadClassification",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ccf46e60-73fb-4568-93c7-f48a011bc16e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "A",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"A\", if(DN < 100 mm, DN + 170 mm, if(DN > 200 mm, DN + 330 mm, DN + 300 mm)), DN)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DN",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"DN\", Durchmesser, Durchmesser)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Breite",
+        "ParameterValues": {
+          "Allgemein": "429.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "if(D0 + C < 240 mm, 240 mm, D0 + C)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Länge",
+        "ParameterValues": {
+          "Allgemein": "214.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "Symbol_Breite / 2",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typ Vordefinierter IFC-Typ",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_PREDEFINEDTYPE_TYPE"
+      },
+      {
+        "ParameterName": "Typ in IFC exportieren als",
+        "ParameterValues": {
+          "Allgemein": "IfcValveType"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_ELEMENT_TYPE_AS"
+      },
+      {
+        "ParameterName": "Vorgabe-Ansicht",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_CONSTRAINTS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "FAMILY_FREEINST_DEFAULT_ELEVATION"
+      },
+      {
+        "ParameterName": "R_Druckverlust",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_PASCALS",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingPressure",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c2e2a153-9669-4f71-85e2-42efd3a7317d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "R_Volumenstrom",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CUBIC_METERS_PER_HOUR",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingFlow",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "3c8f6eba-efaf-42a0-b743-d891c44dc090",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Gehäuse_Oberfläche",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Material",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MATERIALS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Breite_Benutzer = 0 mm, Durchmesser * 1,5, Breite_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "f1380248-b21a-4a7f-8b48-5e996701644b",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Durchmesser",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "dd7e134f-e7cb-4e92-bc8e-0c3aefa01f23",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Höhe_Benutzer = 0 mm, Breite, Höhe_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "a7738561-8450-4ba3-8df1-1d4113d4faf6",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Länge_Benutzer = 0 mm, A, Länge_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c44ce259-a60f-4d96-b00f-94242e29a5f2",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Oben_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "F0",
+        "ParameterValues": {
+          "Allgemein": "302.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Oben_Benutzer = 0 mm, size_lookup(Abruftabelle, \"F\", if(DN < 100 mm, 0,029 m² / DN, if(DN > 150 mm, 0,037 m² / DN, 0,033 m² / DN)), DN), Alarmleitung_Abstand_Oben_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "C",
+        "ParameterValues": {
+          "Allgemein": "220"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"C\", if(DN < 100 mm, DN + 140 mm, if(DN > 200 mm, DN + 80 mm, DN + 110 mm)), DN), Alarmleitung_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Manometer_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "D0",
+        "ParameterValues": {
+          "Allgemein": "209.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Manometer_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"D\", C - 10 mm, DN), Manometer_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anschlussstutzen_Länge",
+        "ParameterValues": {
+          "Allgemein": "10"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abkürzung",
+        "ParameterValues": {
+          "Allgemein": "TAN"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fd8abad9-396c-4641-9b11-e4144bd26ce1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "BIMPedia",
+        "ParameterValues": {
+          "Allgemein": "https://www.bimpedia.eu/artikel/1852-familienkatalog-tga"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DIN_276",
+        "ParameterValues": {
+          "Allgemein": "475 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"475 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "0c0dc952-fee9-445a-8bb1-2a1812250cc3",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_Copyright",
+        "ParameterValues": {
+          "Allgemein": "Copyright©by Anonymous GmbH"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Copyright©by Anonymous GmbH\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_URL",
+        "ParameterValues": {
+          "Allgemein": "https://Anonymous.eu/bim-templates/"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anonymous_Gruppe",
+        "ParameterValues": {
+          "Allgemein": "Alarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Alarmventilstation\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "8a7b2751-6676-4816-b7b0-cd07abbb7813",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNCODE",
+        "ParameterValues": {
+          "Allgemein": "05;22;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"05;22;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ae016126-4564-406b-a9d7-e31026663448",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNSEQ",
+        "ParameterValues": {
+          "Allgemein": "\"AWI,AWI_TYP=\"\"1015\"\";\"2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"\\\"AWI,AWI_TYP=\\\"\\\"1015\\\"\\\";\\\"2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c6920c4c-40de-47b3-9607-4de217e8c28d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCTWCODE",
+        "ParameterValues": {
+          "Allgemein": "04;21;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"04;21;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "4f4dd23a-1543-4685-8f1a-8b0fcf197cd4",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typenbild",
+        "ParameterValues": {
+          "Allgemein": "-1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Image",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_IMAGE"
+      },
+      {
+        "ParameterName": "Bauelement",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "KEYNOTE_PARAM"
+      },
+      {
+        "ParameterName": "Modell",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MODEL"
+      },
+      {
+        "ParameterName": "Hersteller",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MANUFACTURER"
+      },
+      {
+        "ParameterName": "Typenkommentare",
+        "ParameterValues": {
+          "Allgemein": "Tandemstation;;Typ 1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_COMMENTS"
+      },
+      {
+        "ParameterName": "URL",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_URL"
+      },
+      {
+        "ParameterName": "Beschreibung",
+        "ParameterValues": {
+          "Allgemein": "Tandemstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_DESCRIPTION"
+      },
+      {
+        "ParameterName": "Baugruppenkennzeichen",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "UNIFORMAT_CODE"
+      },
+      {
+        "ParameterName": "Kosten",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CURRENCY",
+        "ParameterType": "Double",
+        "ParameterValueType": "Currency",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "DOOR_COST"
+      },
+      {
+        "ParameterName": "ÖN_1801",
+        "ParameterValues": {
+          "Allgemein": "3E.04 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"3E.04 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fe9e83eb-e164-445c-a19d-e7dcd11a52b1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abruftabelle",
+        "ParameterValues": {
+          "Allgemein": "Nassalarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Normal",
+        "ParameterValues": {
+          "Allgemein": "true"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Gespiegelt",
+        "ParameterValues": {
+          "Allgemein": "false"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": "not(Symbol_Darstellung_Normal)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      }
+    ],
+    "ErrorInformation": [],
+    "FamilyLoaded": true,
+    "FileName": "Family2.rfa"
+  },
+  {
+    "ParameterInformation": [
+      {
+        "ParameterName": "Wirkleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_WATTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "da6a3bbc-a600-40fa-970a-08fb75f19111",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "E_Spannung",
+        "ParameterValues": {
+          "Allgemein": "230"
+        },
+        "Unit": "BSU_VOLTS",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalPotential",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "921a7dc4-d764-4b67-90cb-46dc008d6f93",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Phasen_Anzahl",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "NumberOfPoles",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "if(E_Spannung > 300 V, 3, 1)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "1d908d49-e7cd-4e98-a72a-1ec6a7d3594e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Scheinleistung",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_VOLT_AMPERES",
+        "ParameterType": "Double",
+        "ParameterValueType": "ElectricalApparentPower",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": "Wirkleistung / Leistungsfaktor",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "6f874434-de90-4722-8bdd-73bcf20a8117",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Leistungsfaktor",
+        "ParameterValues": {
+          "Allgemein": "1"
+        },
+        "Unit": "BSU_GENERAL",
+        "ParameterType": "Double",
+        "ParameterValueType": "Number",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ed7f8dce-5294-4d47-963b-315e4c22657d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Lastklassifizierung",
+        "ParameterValues": {
+          "Allgemein": "Sonstige"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "LoadClassification",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ELECTRICAL_CIRCUITING",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ccf46e60-73fb-4568-93c7-f48a011bc16e",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "A",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"A\", if(DN < 100 mm, DN + 170 mm, if(DN > 200 mm, DN + 330 mm, DN + 300 mm)), DN)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DN",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "size_lookup(Abruftabelle, \"DN\", Durchmesser, Durchmesser)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Breite",
+        "ParameterValues": {
+          "Allgemein": "429.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "if(D0 + C < 240 mm, 240 mm, D0 + C)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Länge",
+        "ParameterValues": {
+          "Allgemein": "214.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_ANALYSIS_RESULTS",
+        "Formula": "Symbol_Breite / 2",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typ Vordefinierter IFC-Typ",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_PREDEFINEDTYPE_TYPE"
+      },
+      {
+        "ParameterName": "Typ in IFC exportieren als",
+        "ParameterValues": {
+          "Allgemein": "IfcValveType"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IFC",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "IFC_EXPORT_ELEMENT_TYPE_AS"
+      },
+      {
+        "ParameterName": "Vorgabe-Ansicht",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_CONSTRAINTS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "FAMILY_FREEINST_DEFAULT_ELEVATION"
+      },
+      {
+        "ParameterName": "R_Druckverlust",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_PASCALS",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingPressure",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c2e2a153-9669-4f71-85e2-42efd3a7317d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "R_Volumenstrom",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CUBIC_METERS_PER_HOUR",
+        "ParameterType": "Double",
+        "ParameterValueType": "PipingFlow",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MECHANICAL",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "3c8f6eba-efaf-42a0-b743-d891c44dc090",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Gehäuse_Oberfläche",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Material",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_MATERIALS",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Breite_Benutzer = 0 mm, Durchmesser * 1,5, Breite_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "f1380248-b21a-4a7f-8b48-5e996701644b",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Durchmesser",
+        "ParameterValues": {
+          "Allgemein": "80"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "dd7e134f-e7cb-4e92-bc8e-0c3aefa01f23",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Höhe",
+        "ParameterValues": {
+          "Allgemein": "120"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Höhe_Benutzer = 0 mm, Breite, Höhe_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "a7738561-8450-4ba3-8df1-1d4113d4faf6",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Breite_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge",
+        "ParameterValues": {
+          "Allgemein": "258.8"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Länge_Benutzer = 0 mm, A, Länge_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c44ce259-a60f-4d96-b00f-94242e29a5f2",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Länge_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Oben_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "F0",
+        "ParameterValues": {
+          "Allgemein": "302.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Oben_Benutzer = 0 mm, size_lookup(Abruftabelle, \"F\", if(DN < 100 mm, 0,029 m² / DN, if(DN > 150 mm, 0,037 m² / DN, 0,033 m² / DN)), DN), Alarmleitung_Abstand_Oben_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Alarmleitung_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "C",
+        "ParameterValues": {
+          "Allgemein": "220"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Alarmleitung_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"C\", if(DN < 100 mm, DN + 140 mm, if(DN > 200 mm, DN + 80 mm, DN + 110 mm)), DN), Alarmleitung_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Manometer_Abstand_Seitlich_Benutzer",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "D0",
+        "ParameterValues": {
+          "Allgemein": "209.5"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": "if(Manometer_Abstand_Seitlich_Benutzer = 0 mm, size_lookup(Abruftabelle, \"D\", C - 10 mm, DN), Manometer_Abstand_Seitlich_Benutzer)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anschlussstutzen_Länge",
+        "ParameterValues": {
+          "Allgemein": "10"
+        },
+        "Unit": "BSU_MILLIMETERS",
+        "ParameterType": "Double",
+        "ParameterValueType": "Length",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_GEOMETRY",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abkürzung",
+        "ParameterValues": {
+          "Allgemein": "TAV"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fd8abad9-396c-4641-9b11-e4144bd26ce1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "BIMPedia",
+        "ParameterValues": {
+          "Allgemein": "https://www.bimpedia.eu/artikel/1852-familienkatalog-tga"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "DIN_276",
+        "ParameterValues": {
+          "Allgemein": "475 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"475 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "0c0dc952-fee9-445a-8bb1-2a1812250cc3",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_Copyright",
+        "ParameterValues": {
+          "Allgemein": "Copyright©by Anonymous GmbH"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Copyright©by Anonymous GmbH\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "PD_URL",
+        "ParameterValues": {
+          "Allgemein": "https://Anonymous.eu/bim-templates/"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Anonymous_Gruppe",
+        "ParameterValues": {
+          "Allgemein": "Alarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"Alarmventilstation\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "8a7b2751-6676-4816-b7b0-cd07abbb7813",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNCODE",
+        "ParameterValues": {
+          "Allgemein": "05;22;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"05;22;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "ae016126-4564-406b-a9d7-e31026663448",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCRNSEQ",
+        "ParameterValues": {
+          "Allgemein": "\"AWI,AWI_TYP=\"\"1015\"\";\"2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"\\\"AWI,AWI_TYP=\\\"\\\"1015\\\"\\\";\\\"2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "c6920c4c-40de-47b3-9607-4de217e8c28d",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "SCTWCODE",
+        "ParameterValues": {
+          "Allgemein": "04;21;2"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"04;21;2\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "4f4dd23a-1543-4685-8f1a-8b0fcf197cd4",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Typenbild",
+        "ParameterValues": {
+          "Allgemein": "-1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "ElementId",
+        "ParameterValueType": "Image",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_IMAGE"
+      },
+      {
+        "ParameterName": "Bauelement",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "KEYNOTE_PARAM"
+      },
+      {
+        "ParameterName": "Modell",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MODEL"
+      },
+      {
+        "ParameterName": "Hersteller",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_MANUFACTURER"
+      },
+      {
+        "ParameterName": "Typenkommentare",
+        "ParameterValues": {
+          "Allgemein": "Trockenalarmventilstation;;Typ 1"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_TYPE_COMMENTS"
+      },
+      {
+        "ParameterName": "URL",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "URL",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_URL"
+      },
+      {
+        "ParameterName": "Beschreibung",
+        "ParameterValues": {
+          "Allgemein": "Trockenalarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "ALL_MODEL_DESCRIPTION"
+      },
+      {
+        "ParameterName": "Baugruppenkennzeichen",
+        "ParameterValues": {
+          "Allgemein": ""
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "UNIFORMAT_CODE"
+      },
+      {
+        "ParameterName": "Kosten",
+        "ParameterValues": {
+          "Allgemein": "0"
+        },
+        "Unit": "BSU_CURRENCY",
+        "ParameterType": "Double",
+        "ParameterValueType": "Currency",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "DOOR_COST"
+      },
+      {
+        "ParameterName": "ÖN_1801",
+        "ParameterValues": {
+          "Allgemein": "3E.04 Feuerlöschanlagen"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": true,
+        "IsInstanceParameter": false,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_IDENTITY_DATA",
+        "Formula": "\"3E.04 Feuerlöschanlagen\"",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "fe9e83eb-e164-445c-a19d-e7dcd11a52b1",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Abruftabelle",
+        "ParameterValues": {
+          "Allgemein": "Nassalarmventilstation"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "String",
+        "ParameterValueType": "Text",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Normal",
+        "ParameterValues": {
+          "Allgemein": "true"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": null,
+        "IsDeterminedByFormula": false,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      },
+      {
+        "ParameterName": "Symbol_Darstellung_Gespiegelt",
+        "ParameterValues": {
+          "Allgemein": "false"
+        },
+        "Unit": "BSU_NO_UNIT",
+        "ParameterType": "Integer",
+        "ParameterValueType": "YesNo",
+        "IsSharedParameter": false,
+        "IsInstanceParameter": true,
+        "IsReportingParameter": false,
+        "ParameterGroup": "BS_INVALID",
+        "Formula": "not(Symbol_Darstellung_Normal)",
+        "IsDeterminedByFormula": true,
+        "IsEnumType": false,
+        "EnumValues": [],
+        "Guid": "",
+        "Description": null,
+        "BuiltInParameterEnumName": "INVALID"
+      }
+    ],
+    "ErrorInformation": [],
+    "FamilyLoaded": true,
+    "FileName": "Family3.rfa"
+  }
+]
