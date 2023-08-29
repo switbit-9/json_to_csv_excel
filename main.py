@@ -1,71 +1,48 @@
 import json
 import os
 import sys
-from parse import CSVConverter, ExcelConverter
+from parse import Converter
 from dotenv import load_dotenv
 load_dotenv()
 
-TARGET_FORMAT = ''
 
-def check_target():
-    global TARGET_FORMAT
-    TARGET_FORMAT = os.getenv('TARGET_FORMAT')
-    if TARGET_FORMAT == 'csv':
+def parse_args():
+    target_format = os.getenv('TARGET_FORMAT')
+    if target_format == 'csv':
         print("Converting file to csv ...")
-    elif TARGET_FORMAT == 'excel':
+    elif target_format == 'excel':
         print('Converting file to excel ...')
-
     else:
-        print(f'This {TARGET_FORMAT} format is not supported !!')
+        print(f'This {target_format} format is not supported !!')
         sys.exit()
 
-def load_input_file():
-    input_file = os.getenv('INPUT_FILE')
-    input_file_path = os.path.join(os.getcwd(), input_file)
+    input_file_path = os.path.join(os.getcwd(), os.getenv('INPUT_FILE'))
+    return target_format, input_file_path
+
+def load_input_file(file_path):
     try:
-        with open(input_file_path, 'r') as file:
+        with open(file_path, 'r') as file:
             data = json.load(file)
             return data
     except json.JSONDecodeError as e:
         print(f"Error decoding JSON: {e}")
         sys.exit()
     except FileNotFoundError as e:
-        print(f"File not found on specified path: {input_file}")
+        print(f"File not found on specified path: {file_path}")
         sys.exit()
 
 
 def main():
-    check_target()
-    data = load_input_file()
+    target_format, file_path = parse_args()
+    data = load_input_file(file_path)
+    # converter = CSVConverter if TARGET_FORMAT == 'csv' else ExcelConverter
     for param in data:
         filename = param['FileName']
-
         if param['FamilyLoaded'] is False:
-            print('This Filename is skipped because is not loaded ...')
+            print(f'This {filename} is skipped because is not loaded ...')
             continue
         params_info = param['ParameterInformation']
-
-        if TARGET_FORMAT == 'csv':
-            for item in params_info:
-                parser = CSVConverter(item)
-            parser.write_to_file(filename)
-
-        elif TARGET_FORMAT == 'excel':
-            for item in params_info:
-                parser = ExcelConverter(item)
-            parser.write_to_file(filename)
-
-
-
-
-
-
-
-
-
-
-
-
+        Converter(params_info, filename, to_format=target_format)
 
 
 if __name__ == '__main__':
