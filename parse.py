@@ -104,27 +104,6 @@ class BaseConverter():
             param = 'No Value'
         self._datetyp_bms = param
 
-    def check_target_file(self, filename, to_format, target_directory):
-        self.set_filename(to_format, filename)
-        target_directory = self.set_target_directory(target_directory)
-        directory_path = os.path.join(os.getcwd(), target_directory)
-        if not os.path.exists(target_directory) and not os.path.isdir(target_directory):
-            os.makedirs(directory_path)
-        self.set_file_path(os.path.join(directory_path, self.filename))
-
-    @classmethod
-    def set_file_path(cls, file_path):
-        cls.file_path = file_path
-    @classmethod
-    def modify_first_iter(cls, value=False):
-        cls.FIRST_ITER = value
-
-    @classmethod
-    def quit(cls):
-        cls.FIRST_ITER = True
-        cls.data = {}
-
-
 
     def convert(self):
         properties = self.column_names
@@ -139,21 +118,7 @@ class BaseConverter():
             else:
                 self.data[item].append(self.__dict__["_" + item])
 
-    @classmethod
-    def set_filename(cls, to_format, filename):
-        if to_format == 'csv':
-            cls.file_format = 'csv'
-        elif to_format == 'excel':
-            cls.file_format = 'xlsx'
-        cls.filename = filename.split('.')[0] + '.' + cls.file_format
 
-    def set_target_directory(self, target_directory=None):
-        if target_directory is None:
-            if self.file_format == 'csv':
-                return 'target_csv'
-            elif self.file_format == 'xlsx':
-                return 'target_excel'
-        return target_directory
 
 class Converter(BaseConverter):
     def __init__(self, items, filename, to_format='csv', target_directory=None):
@@ -183,4 +148,39 @@ class Converter(BaseConverter):
             self.quit()
 
 
+    def check_target_file(self, filename, to_format, target_directory):
+        self.set_filename(to_format, filename)
+        target_directory = self.set_target_directory(target_directory)
+        directory_path = os.path.join(os.getcwd(), target_directory)
+        if not os.path.exists(target_directory) and not os.path.isdir(target_directory):
+            os.makedirs(directory_path)
+        self.set_file_path(os.path.join(directory_path, self.filename))
+
+    @classmethod
+    def set_file_path(cls, file_path):
+        cls.file_path = file_path
+    @classmethod
+    def modify_first_iter(cls, value=False):
+        cls.FIRST_ITER = value
+
+    @classmethod
+    def quit(cls):
+        cls.FIRST_ITER = True
+        cls.data = {}
+
+    @classmethod
+    def set_filename(cls, to_format, filename):
+        if to_format == 'csv':
+            cls.file_format = 'csv'
+        elif to_format == 'excel':
+            cls.file_format = 'xlsx'
+        cls.filename = filename.split('.')[0] + '.' + cls.file_format
+
+    def set_target_directory(self, target_directory=None):
+        if target_directory is None:
+            if self.file_format == 'csv':
+                return 'target_csv'
+            elif self.file_format == 'xlsx':
+                return 'target_excel'
+        return target_directory
 

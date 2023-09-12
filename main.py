@@ -42,7 +42,7 @@ def main():
             print(f'This {filename} is skipped because is not loaded ...')
             continue
         params_info = param['ParameterInformation']
-        Converter(params_info, filename, to_format=target_format)
+        Converter(params_info, filename, to_format=target_format, target_directory=None)
 
 
 if __name__ == '__main__':
